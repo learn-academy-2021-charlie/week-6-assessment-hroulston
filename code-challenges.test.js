@@ -18,16 +18,76 @@
 
 // a) Create a test with an expect statement using the variable provided.
 
-var people = [
-  { name: "ford prefect", occupation: "hitchhiker" },
-  { name: "zaphod beeblebrox", occupation: "president of the galaxy" },
-  { name: "arthur dent", occupation: "radio employee" }
-]
+describe("capName", () => {
+  test("the function should return an array with strings that has the name capitalized and what that person's occupation is.", () => {
+    var people = [
+      { name: "ford prefect", occupation: "hitchhiker" },
+      { name: "zaphod beeblebrox", occupation: "president of the galaxy" },
+      { name: "arthur dent", occupation: "radio employee" }
+    ]
+    expect(canName(people)).toEqual(["Ford Prefect is a hitchhiker.", "Zaphod Beeblebrox is a president of the galaxy.", "Arthur Dent is a radio employee."])
+  })
+})
+
+// var people = [
+//   { name: "ford prefect", occupation: "hitchhiker" },
+//   { name: "zaphod beeblebrox", occupation: "president of the galaxy" },
+//   { name: "arthur dent", occupation: "radio employee" }
+// ]
 // Expected output: ["Ford Prefect is a hitchhiker.", "Zaphod Beeblebrox is a president of the galaxy.", "Arthur Dent is a radio employee."]
 
 
 
 // b) Create the function that makes the test pass.
+
+// Create a function
+// parameter of an array
+// have an empty array called name
+// map through the array and for each object with the key name it will access the value
+// the values will get pushed to a new array called name
+// map through the name array called name and for each value at index 0 it will capitalize the word and then add the rest of the word back on using slice(1)
+// Might be able to mab through the objects, access the values, and capitalize + slice(1) all in one go. That would be ideal
+// Once the names are capitalized the array will be mapped through again and the return will be a string that uses string interpolation
+// it will look something like `${object.value(name)} is a ${object.value(occupation)}.` I am assuming. I will need to google to get syntax correct
+
+const canName = (array) => {
+for(let i=0; i<array.length; i++){
+  let names = array[i].name.split(' ')
+  let capNames = names.forEach(value => {
+    value.charAt(0).toUpperCase() + value.slice(1)
+  })
+  console.log(capNames)
+// CapNames returns 3 undefines
+
+  // for(let i=0; i<names.length; i++){
+  //   names[i].charAt(0).toUpperCase() + names[i].slice(1)
+  // }
+  // let capNames = names.join(' ')
+  // array[i].name = capNames.join(' ')
+}
+return array
+
+
+//   var name = []
+//   for (let i=0; i<array.length; i++){
+//    name.push(array[i].name.split(' '))
+//   }
+//   // I didn't realize I would have an array of arrays so I had to iterate over the array and then iterate again over each value to uppercase.
+//   var capName = []
+//   name.map(value => {
+//     value.forEach(value =>
+//       capName.push(value.charAt(0).toUpperCase() + value.slice(1))
+//     )
+//   })
+// for(let i=0; i<array.length; i++){
+//   array[i].name = capName.map((value, i) => {
+//     value[i] + value[i+1]
+//   })
+//   return array
+// }
+    // console.log(array)
+}
+
 
 
 
