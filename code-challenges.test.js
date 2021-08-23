@@ -136,6 +136,24 @@ describe("remainder", () => {
 
 // b) Create the function that makes the test pass.
 
+// Create a function called remainder
+// Takes a parameter of an array
+// Create an empty array called numOnly
+// Iterate through the array and if the type is equal to a number then that number will be pushed into numOnly
+// Iterate through numOnly (probably using map) and for each index I will divide by 3 and print the remainder in the returned array.
+
+const remainder = (array) => {
+  let numOnly = []
+  for(let i=0; i<array.length; i++){
+    if( typeof array[i] === "number"){
+      numOnly.push(array[i])
+    }
+  }
+   let remainArr = numOnly.map(value => {
+    return value % 3
+  })
+  return remainArr
+}
 
 
 // --------------------3) Create a function that takes in an array of numbers and returns the sum of all the numbers cubed.
@@ -160,3 +178,27 @@ describe("cubeSum", () => {
 
 
 // b) Create the function that makes the test pass.
+
+// Ok I will create a function called cubeSum that takes an argument of an array
+// I will create an empty variable called sumNum that will be given the value of 0
+// Next I will iterate over the array using a for loop and for each index that number will be added to the sumNum variable
+// Then I will cube sumNum and return the value
+
+// const cubeSum = (array) => {
+//   let sumNum = 0
+//   for(let i=0; i<array.length; i++){
+//     sumNum += array[i]
+//   }
+//   return Math.pow(sumNum, 3)
+// }
+
+// So I misunderstood. I thought I had to add the numbers and then cube the sum.
+// Nope I need to cube the numbers FIRST and then add them together.
+// Then return the sum
+const cubeSum = (array) => {
+  let sumNum = 0
+  for(let i=0; i<array.length; i++){
+    sumNum += Math.pow(array[i], 3)
+  }
+  return sumNum
+}
