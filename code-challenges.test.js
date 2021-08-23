@@ -52,69 +52,21 @@ describe("capName", () => {
 
 const canName = (array) => {
  let newArray = array.map(value => {
-   return name = value.name.split(' ')
- })
+   return value.name.split(' ')
+})
  let capName = []
  for(let i=0; i<newArray.length; i++){
-   return capName.push(newArray[i].map(value => {
-     return capValue = value.charAt(0).toUpperCase() + value.slice(1)
-   }))
-}
-return capName
+   for( let j=0; j<newArray[i].length; j++){
+     return newArray[i][j].charAt(0).toUpperCase() + newArray[i][j].slice(1)
+   }
+   // capName.push(capValue)
 
-}
-
-//   let newArr = []
-// for(let i=0; i<array.length; i++){
-//   let names = array[i].name.split(' ')
-//   newArr.push(names)
-// }
-// return newArr
-// console.log(newArr)
-
-// let capName = []
-// for(let i=0; i<name.length; i++){
-//   let capNames = name[i].map(value =>
-//     value.charAt(0).toUpperCase() + value.slice(1)
-//   )
-//   capName.push(capNames)
-// }
-//   // let capNames = name.map(value =>
-//   //   value.charAt(0).toUpperCase() + value.slice(1)
-//   // )
-//   console.log(capName)
-// CapNames returns 3 undefines
-
-  // for(let i=0; i<names.length; i++){
-  //   names[i].charAt(0).toUpperCase() + names[i].slice(1)
-  // }
-  // let capNames = names.join(' ')
-  // array[i].name = capNames.join(' ')
-
-// return array
+   // return capName
+ }}
 
 
-//   var name = []
-//   for (let i=0; i<array.length; i++){
-//    return name.push(array[i].name.split(' '))
-//   }
-//
-//   // I didn't realize I would have an array of arrays so I had to iterate over the array and then iterate again over each value to uppercase.
-//   var capName = []
-//   name.map(value => {
-//     value.forEach(value =>
-//       capName.push(value.charAt(0).toUpperCase() + value.slice(1))
-//     )
-//   })
-// for(let i=0; i<array.length; i++){
-//   array[i].name = capName.map((value, i) => {
-//     value[i] + value[i+1]
-//   })
-//   return array
-// }
-//     // console.log(array)
-
-
+// This problem has taken days and hours and I still can't seem to get it. I was able to pull out the names and create an array with an array of names.
+// I looped through each array to capitalize the names and it just capitalizes the first array and I can't seem to figure out why it is stopping. As I am out of time, I have to let it go and see what my classmates have come up with. 
 
 
 
