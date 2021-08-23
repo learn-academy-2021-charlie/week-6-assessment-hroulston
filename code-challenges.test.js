@@ -25,7 +25,7 @@ describe("capName", () => {
       { name: "zaphod beeblebrox", occupation: "president of the galaxy" },
       { name: "arthur dent", occupation: "radio employee" }
     ]
-    expect(canName(people)).toEqual(["Ford Prefect is a hitchhiker.", "Zaphod Beeblebrox is a president of the galaxy.", "Arthur Dent is a radio employee."])
+    expect(capName(people)).toEqual(["Ford Prefect is a hitchhiker.", "Zaphod Beeblebrox is a president of the galaxy.", "Arthur Dent is a radio employee."])
   })
 })
 
@@ -51,12 +51,32 @@ describe("capName", () => {
 // it will look something like `${object.value(name)} is a ${object.value(occupation)}.` I am assuming. I will need to google to get syntax correct
 
 const canName = (array) => {
-for(let i=0; i<array.length; i++){
-  let names = array[i].name.split(' ')
-  let capNames = names.forEach(value => {
-    value.charAt(0).toUpperCase() + value.slice(1)
-  })
-  console.log(capNames)
+ let newArray = array.map( (obj) => {
+   name = obj.name
+   name.split("")
+ })
+
+ return newArray
+
+//   let newArr = []
+// for(let i=0; i<array.length; i++){
+//   let names = array[i].name.split(' ')
+//   newArr.push(names)
+// }
+// return newArr
+// console.log(newArr)
+}
+// let capName = []
+// for(let i=0; i<name.length; i++){
+//   let capNames = name[i].map(value =>
+//     value.charAt(0).toUpperCase() + value.slice(1)
+//   )
+//   capName.push(capNames)
+// }
+//   // let capNames = name.map(value =>
+//   //   value.charAt(0).toUpperCase() + value.slice(1)
+//   // )
+//   console.log(capName)
 // CapNames returns 3 undefines
 
   // for(let i=0; i<names.length; i++){
@@ -64,14 +84,15 @@ for(let i=0; i<array.length; i++){
   // }
   // let capNames = names.join(' ')
   // array[i].name = capNames.join(' ')
-}
-return array
+
+// return array
 
 
 //   var name = []
 //   for (let i=0; i<array.length; i++){
-//    name.push(array[i].name.split(' '))
+//    return name.push(array[i].name.split(' '))
 //   }
+//
 //   // I didn't realize I would have an array of arrays so I had to iterate over the array and then iterate again over each value to uppercase.
 //   var capName = []
 //   name.map(value => {
@@ -85,8 +106,8 @@ return array
 //   })
 //   return array
 // }
-    // console.log(array)
-}
+//     // console.log(array)
+
 
 
 
