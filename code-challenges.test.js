@@ -51,12 +51,18 @@ describe("capName", () => {
 // it will look something like `${object.value(name)} is a ${object.value(occupation)}.` I am assuming. I will need to google to get syntax correct
 
 const canName = (array) => {
- let newArray = array.map( (obj) => {
-   name = obj.name
-   name.split("")
+ let newArray = array.map(value => {
+   return name = value.name.split(' ')
  })
+ let capName = []
+ for(let i=0; i<newArray.length; i++){
+   return capName.push(newArray[i].map(value => {
+     return capValue = value.charAt(0).toUpperCase() + value.slice(1)
+   }))
+}
+return capName
 
- return newArray
+}
 
 //   let newArr = []
 // for(let i=0; i<array.length; i++){
@@ -65,7 +71,7 @@ const canName = (array) => {
 // }
 // return newArr
 // console.log(newArr)
-}
+
 // let capName = []
 // for(let i=0; i<name.length; i++){
 //   let capNames = name[i].map(value =>
