@@ -34,24 +34,42 @@ Then, research the question to expand on your answer. Even if you feel you have 
 
   -$rails generate resource: This command sets up the migration and the model needed. It created a controller and generates any necessary routes. Takes same arguments as generate model.
 
-  -$rails generate controller: This command creates a controller in the controller file and a folder in the views folder. The only argument it takes is the name of the controller. When using the generate model and generate controller methods, routes need to be manually created in the app. 
+  -$rails generate controller: This command creates a controller in the controller file and a folder in the views folder. The only argument it takes is the name of the controller. When using the generate model and generate controller methods, routes need to be manually created in the app.
 
 4. Consider the Rails routes below. What is the name of the controller method that would be called by each route? What action would each of the controller methods perform?
 
-method="GET"    /students          
+method="GET"    /students  
+The controller method that would be called by this route would be index. This would show all of the students.         
 
 method="POST"   /students       
+The controller method that would be called by this route would be create. This would be the act of adding a new student.  
 
 method="GET"    /students/new
+The controller method that would be called by this route would be new. This action leads to a form so a new student can be created.    
 
 method="GET"    /students/2  
+The controller method that would be called by this route would be show. This action will render the student with the id of 2.    
 
 method="GET"    /students/edit/2    
+The controller method that would be called by this route would be edit. This is where a user can make changes. In this case, changes would be made specifically to user with the id of 2.
 
 method="PATCH"  /students/2      
+The controller method that would be called by this route would be update. This action replaces any information with student id:2 with anything that was put into the edit form.  
 
 method="DELETE" /students/2      
+The controller method that would be called by this route would be delete. This action deletes a source. In this instance student id:2 would be deleted.  
 
 
 
 5. As a developer, you want to make an application that will help you manage your to do list. Create 10 user stories that will help you get your application started. Read more about [user stories](https://www.atlassian.com/agile/project-management/user-stories).
+
+1.As a user I can create a to do list
+2.As a user I can add an item to the to do list
+3.As a user I can remove an item from the to do list
+4.As a user I can update an item from the to do list
+5.As a user I can create multiple to do lists
+6.As a user I can move an item from one to do list to another
+7.As a user I can check mark items that have been completed
+8.As a user I can check marked items are moved to the bottom of the list
+9.As a user I can add a date to my item
+10.As a user I can color code my to do lists
