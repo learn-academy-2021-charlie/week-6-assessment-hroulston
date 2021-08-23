@@ -116,9 +116,20 @@ const canName = (array) => {
 
 // a) Create a test with an expect statement using the variables provided.
 
-var hodgepodge1 = [23, "Heyyyy!", 45, -10, 0, "Yo", false]
+describe("remainder", () => {
+  test("the function should return an array that contains the remainders of the numbers in the original array when they are divided by 3.", () => {
+    var hodgepodge1 = [23, "Heyyyy!", 45, -10, 0, "Yo", false]
+    var hodgepodge2 = [5, "Hola", 43, -34, "greetings", true]
+
+    expect(remainder(hodgepodge1)).toEqual([ 2, 0, -1, 0 ])
+    expect(remainder(hodgepodge2)).toEqual([ 2, 1, -1 ])
+
+  })
+})
+
+// var hodgepodge1 = [23, "Heyyyy!", 45, -10, 0, "Yo", false]
 // Expected output: [ 2, 0, -1, 0 ]
-var hodgepodge2 = [5, "Hola", 43, -34, "greetings", true]
+// var hodgepodge2 = [5, "Hola", 43, -34, "greetings", true]
 // Expected output: [ 2, 1, -1 ]
 
 
@@ -131,9 +142,19 @@ var hodgepodge2 = [5, "Hola", 43, -34, "greetings", true]
 
 // a) Create a test with an expect statement using the variables provided.
 
-var cubeAndSum1 = [2, 3, 4]
+describe("cubeSum", () => {
+  test("the function should return an integer that is the sum of all of the numbers cubed.", () => {
+    var cubeAndSum1 = [2, 3, 4]
+    var cubeAndSum2 = [0, 5, 10]
+
+    expect(cubeSum(cubeAndSum1)).toEqual(99)
+    expect(cubeSum(cubeAndSum2)).toEqual(1125)
+  })
+})
+
+// var cubeAndSum1 = [2, 3, 4]
 // Expected output: 99
-var cubeAndSum2 = [0, 5, 10]
+// var cubeAndSum2 = [0, 5, 10]
 // Expected output: 1125
 
 
