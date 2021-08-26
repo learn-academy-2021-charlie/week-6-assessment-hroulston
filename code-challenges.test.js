@@ -18,16 +18,55 @@
 
 // a) Create a test with an expect statement using the variable provided.
 
-var people = [
-  { name: "ford prefect", occupation: "hitchhiker" },
-  { name: "zaphod beeblebrox", occupation: "president of the galaxy" },
-  { name: "arthur dent", occupation: "radio employee" }
-]
+describe("capName", () => {
+  test("the function should return an array with strings that has the name capitalized and what that person's occupation is.", () => {
+    var people = [
+      { name: "ford prefect", occupation: "hitchhiker" },
+      { name: "zaphod beeblebrox", occupation: "president of the galaxy" },
+      { name: "arthur dent", occupation: "radio employee" }
+    ]
+    expect(capName(people)).toEqual(["Ford Prefect is a hitchhiker.", "Zaphod Beeblebrox is a president of the galaxy.", "Arthur Dent is a radio employee."])
+  })
+})
+
+// var people = [
+//   { name: "ford prefect", occupation: "hitchhiker" },
+//   { name: "zaphod beeblebrox", occupation: "president of the galaxy" },
+//   { name: "arthur dent", occupation: "radio employee" }
+// ]
 // Expected output: ["Ford Prefect is a hitchhiker.", "Zaphod Beeblebrox is a president of the galaxy.", "Arthur Dent is a radio employee."]
 
 
 
 // b) Create the function that makes the test pass.
+
+// Create a function
+// parameter of an array
+// have an empty array called name
+// map through the array and for each object with the key name it will access the value
+// the values will get pushed to a new array called name
+// map through the name array called name and for each value at index 0 it will capitalize the word and then add the rest of the word back on using slice(1)
+// Might be able to mab through the objects, access the values, and capitalize + slice(1) all in one go. That would be ideal
+// Once the names are capitalized the array will be mapped through again and the return will be a string that uses string interpolation
+// it will look something like `${object.value(name)} is a ${object.value(occupation)}.` I am assuming. I will need to google to get syntax correct
+
+const canName = (array) => {
+ let newArray = array.map(value => {
+   return value.name.split(' ')
+})
+ let capName = []
+ for(let i=0; i<newArray.length; i++){
+   for( let j=0; j<newArray[i].length; j++){
+     return newArray[i][j].charAt(0).toUpperCase() + newArray[i][j].slice(1)
+   }
+   // capName.push(capValue)
+
+   // return capName
+ }}
+
+
+// This problem has taken days and hours and I still can't seem to get it. I was able to pull out the names and create an array with an array of names.
+// I looped through each array to capitalize the names and it just capitalizes the first array and I can't seem to figure out why it is stopping. As I am out of time, I have to let it go and see what my classmates have come up with. 
 
 
 
@@ -35,26 +74,89 @@ var people = [
 
 // a) Create a test with an expect statement using the variables provided.
 
-var hodgepodge1 = [23, "Heyyyy!", 45, -10, 0, "Yo", false]
+describe("remainder", () => {
+  test("the function should return an array that contains the remainders of the numbers in the original array when they are divided by 3.", () => {
+    var hodgepodge1 = [23, "Heyyyy!", 45, -10, 0, "Yo", false]
+    var hodgepodge2 = [5, "Hola", 43, -34, "greetings", true]
+
+    expect(remainder(hodgepodge1)).toEqual([ 2, 0, -1, 0 ])
+    expect(remainder(hodgepodge2)).toEqual([ 2, 1, -1 ])
+
+  })
+})
+
+// var hodgepodge1 = [23, "Heyyyy!", 45, -10, 0, "Yo", false]
 // Expected output: [ 2, 0, -1, 0 ]
-var hodgepodge2 = [5, "Hola", 43, -34, "greetings", true]
+// var hodgepodge2 = [5, "Hola", 43, -34, "greetings", true]
 // Expected output: [ 2, 1, -1 ]
 
 
 
 // b) Create the function that makes the test pass.
 
+// Create a function called remainder
+// Takes a parameter of an array
+// Create an empty array called numOnly
+// Iterate through the array and if the type is equal to a number then that number will be pushed into numOnly
+// Iterate through numOnly (probably using map) and for each index I will divide by 3 and print the remainder in the returned array.
+
+const remainder = (array) => {
+  let numOnly = []
+  for(let i=0; i<array.length; i++){
+    if( typeof array[i] === "number"){
+      numOnly.push(array[i])
+    }
+  }
+   let remainArr = numOnly.map(value => {
+    return value % 3
+  })
+  return remainArr
+}
 
 
 // --------------------3) Create a function that takes in an array of numbers and returns the sum of all the numbers cubed.
 
 // a) Create a test with an expect statement using the variables provided.
 
-var cubeAndSum1 = [2, 3, 4]
+describe("cubeSum", () => {
+  test("the function should return an integer that is the sum of all of the numbers cubed.", () => {
+    var cubeAndSum1 = [2, 3, 4]
+    var cubeAndSum2 = [0, 5, 10]
+
+    expect(cubeSum(cubeAndSum1)).toEqual(99)
+    expect(cubeSum(cubeAndSum2)).toEqual(1125)
+  })
+})
+
+// var cubeAndSum1 = [2, 3, 4]
 // Expected output: 99
-var cubeAndSum2 = [0, 5, 10]
+// var cubeAndSum2 = [0, 5, 10]
 // Expected output: 1125
 
 
 
 // b) Create the function that makes the test pass.
+
+// Ok I will create a function called cubeSum that takes an argument of an array
+// I will create an empty variable called sumNum that will be given the value of 0
+// Next I will iterate over the array using a for loop and for each index that number will be added to the sumNum variable
+// Then I will cube sumNum and return the value
+
+// const cubeSum = (array) => {
+//   let sumNum = 0
+//   for(let i=0; i<array.length; i++){
+//     sumNum += array[i]
+//   }
+//   return Math.pow(sumNum, 3)
+// }
+
+// So I misunderstood. I thought I had to add the numbers and then cube the sum.
+// Nope I need to cube the numbers FIRST and then add them together.
+// Then return the sum
+const cubeSum = (array) => {
+  let sumNum = 0
+  for(let i=0; i<array.length; i++){
+    sumNum += Math.pow(array[i], 3)
+  }
+  return sumNum
+}
